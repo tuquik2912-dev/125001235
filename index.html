@@ -3,61 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cửa Hàng Công Nghệ - TechStore</title>
+    <title>Panda Store - Thiết Bị Công Nghệ Chính Hãng</title>
     <link rel="stylesheet" href="index.css">
-    <!-- Font chữ hiện đại từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Thư viện Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Thanh điều hướng -->
+    <!-- Header -->
     <header class="header">
         <div class="container nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-bolt"></i> TechStore</a>
+            <a href="#" class="logo"><i class="fa-solid fa-store"></i> Panda Store</a>
             <nav class="nav-links">
                 <a href="#" class="active">Trang Chủ</a>
                 <a href="#products">Sản Phẩm</a>
-                <a href="#about">Giới Thiệu</a>
+                <a href="#sale">Khuyến Mãi</a>
                 <a href="#contact">Liên Hệ</a>
             </nav>
             <div class="nav-actions">
                 <button id="theme-toggle" title="Chuyển đổi giao diện"><i class="fa-solid fa-moon"></i></button>
-                <a href="#cart" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> <span class="badge">0</span></a>
             </div>
         </div>
     </header>
 
-    <!-- Banner chính -->
+    <!-- Banner -->
     <section class="hero">
         <div class="container hero-content">
             <h1>Thế Giới Công Nghệ Đỉnh Cao</h1>
-            <p>Khám phá các dòng Laptop, Phụ kiện và Thiết bị thông minh chính hãng với mức giá tốt nhất thị trường.</p>
-            <a href="#products" class="btn-primary">Xem Sản Phẩm Ngay</a>
+            <p>Chuyên cung cấp Laptop, Bàn phím cơ, Chuột và phụ kiện chính hãng hàng đầu.</p>
+            <a href="#products" class="btn-primary">Khám Phá Ngay</a>
         </div>
     </section>
 
-    <!-- Danh sách sản phẩm -->
+    <!-- Main Products -->
     <main class="container" id="products">
         <div class="section-title">
             <h2>Sản Phẩm Nổi Bật</h2>
-            <p>Những thiết bị mới nhất được cập nhật liên tục dành riêng cho bạn</p>
+            <p>Thiết bị công nghệ chất lượng cao, giá tốt nhất dành cho bạn</p>
         </div>
 
         <div class="product-grid">
             <!-- Sản phẩm 1 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/nitro-v_755588bd95514b6386940d73d3951e2d_1024x1024_eaa7dc8d4f4b4e1a86a0891f3497c156.webp" alt="Laptop Acer Nitro V">
-                    <span class="tag">Mới</span>
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80" alt="Laptop Gaming Acer Nitro">
+                    <span class="tag">Gaming</span>
                 </div>
                 <div class="product-info">
-                    <h3>Laptop Acer Nitro V Gaming</h3>
-                    <p class="desc">Hiệu năng mạnh mẽ chiến mọi tựa game hot hiện nay.</p>
+                    <h3>Laptop Gaming Acer Nitro</h3>
+                    <p class="desc">Cấu hình mạnh mẽ, tản nhiệt tối ưu chiến mọi tựa game.</p>
                     <div class="price-box">
                         <span class="price">21.990.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -65,15 +62,15 @@
             <!-- Sản phẩm 2 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/air-m2-silver-1654673002-436c77f9-8362-4e3a-840f-ef84019eecc2.webp" alt="MacBook Air M2">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="MacBook Air M2">
                     <span class="tag hot">Hot</span>
                 </div>
                 <div class="product-info">
-                    <h3>MacBook Air M2 Silver</h3>
-                    <p class="desc">Thiết kế siêu mỏng nhẹ, pin ấn tượng, chip Apple M2.</p>
+                    <h3>MacBook Air M2 2022</h3>
+                    <p class="desc">Thiết kế mỏng nhẹ sang trọng, chip M2 hiệu năng vượt trội.</p>
                     <div class="price-box">
-                        <span class="price">26.990.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <span class="price">24.500.000₫</span>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -81,14 +78,14 @@
             <!-- Sản phẩm 3 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/ban-phim-co-khong-day-keychron-k2-he-special-edition-rgb-hotswap-aluminum-magnetic-sw-01.webp" alt="Bàn phím cơ Keychron K2 HE">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Bàn phím cơ Keychron">
                 </div>
                 <div class="product-info">
-                    <h3>Bàn phím Keychron K2 HE</h3>
-                    <p class="desc">Bàn phím cơ không dây Special Edition switch cao cấp.</p>
+                    <h3>Bàn phím cơ Keychron K2</h3>
+                    <p class="desc">Hot-swappable, kết nối không dây Bluetooth tiện lợi.</p>
                     <div class="price-box">
-                        <span class="price">2.890.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <span class="price">1.850.000₫</span>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -96,15 +93,15 @@
             <!-- Sản phẩm 4 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/g-pro-x-superlight-wireless-black-666_83650815ce2e486f9108dbbb17c29159_1450bb4a9bd34dcb92fc77f627eb600d.webp" alt="Chuột Logitech G Pro X Superlight">
-                    <span class="tag">Gaming</span>
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Chuột Logitech G Pro X">
+                    <span class="tag">Esports</span>
                 </div>
                 <div class="product-info">
                     <h3>Chuột Logitech G Pro X</h3>
-                    <p class="desc">Siêu nhẹ không dây, cảm biến HERO 25K chính xác cao.</p>
+                    <p class="desc">Thiết kế siêu nhẹ, cảm biến HERO chính xác tuyệt đối.</p>
                     <div class="price-box">
-                        <span class="price">2.490.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <span class="price">2.990.000₫</span>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -112,14 +109,14 @@
             <!-- Sản phẩm 5 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/laptop-asus-zenbook-14-ux3405ca-st648w-6.webp" alt="Laptop ASUS Zenbook 14">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Laptop ASUS Zenbook">
                 </div>
                 <div class="product-info">
                     <h3>Laptop ASUS Zenbook 14</h3>
-                    <p class="desc">OLED sắc nét, sang trọng, tinh tế cho người dùng văn phòng.</p>
+                    <p class="desc">Màn hình OLED sắc nét, mỏng nhẹ hoàn hảo cho dân văn phòng.</p>
                     <div class="price-box">
-                        <span class="price">24.500.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <span class="price">19.990.000₫</span>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -127,14 +124,14 @@
             <!-- Sản phẩm 6 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="imgs/apple-watch-se-2023-lte-44mm-vien-nhom-day-vai-chinh-hang-vn-a-01.webp" alt="Apple Watch SE 2023">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Apple Watch SE">
                 </div>
                 <div class="product-info">
-                    <h3>Apple Watch SE 2023 LTE</h3>
-                    <p class="desc">Đồng hồ thông minh theo dõi sức khỏe và thể thao tối ưu.</p>
+                    <h3>Apple Watch SE 2023</h3>
+                    <p class="desc">Đồng hồ thông minh hỗ trợ theo dõi sức khỏe và thể thao.</p>
                     <div class="price-box">
-                        <span class="price">6.990.000₫</span>
-                        <button class="add-to-cart"><i class="fa-solid fa-plus"></i> Thêm</button>
+                        <span class="price">6.490.000₫</span>
+                        <button class="add-to-cart">Chọn mua</button>
                     </div>
                 </div>
             </div>
@@ -143,22 +140,16 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 TechStore. Bản quyền thuộc về bạn. Thiết kế giao diện hiện đại.</p>
-            <div class="social-links">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
+        <div class="container">
+            <p>&copy; 2026 Panda Store. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Script tương tác chuyển đổi Dark Mode -->
+    <!-- Script Dark Mode -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const icon = themeToggleBtn.querySelector('i');
 
-        // Kiểm tra lưu trữ local storage
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
             icon.classList.replace('fa-moon', 'fa-sun');
