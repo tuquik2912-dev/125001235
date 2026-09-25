@@ -1,3 +1,4 @@
+/* --- 5. Design System & Biến màu sắc toàn cục trong :root --- */
 :root {
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
@@ -23,12 +24,13 @@ body.dark-mode {
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
+/* --- Reset cơ bản --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html {
@@ -39,6 +41,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden; /* Tránh cuộn ngang */
 }
 
 .container {
@@ -47,7 +50,14 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* --- 2. CSS Grid tổng thể (Bố cục các vùng lớn) --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* --- 3. Flexbox trình bày nội dung bên trong các khối --- */
 .header {
     position: sticky;
     top: 0;
@@ -76,7 +86,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
@@ -102,31 +112,46 @@ body {
     justify-content: center;
 }
 
-/* Hero Section */
+#theme-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* --- Banner Section (Flexbox) --- */
 .hero {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
-    text-align: center;
-    padding: 80px 20px;
-    margin-bottom: 50px;
+    padding: 60px 0;
+    border-radius: 0 0 24px 24px;
 }
 
-.hero-content h1 {
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
-.hero-content p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 25px;
+.hero-text p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
     opacity: 0.9;
 }
 
 .btn-primary {
     display: inline-block;
     background-color: white;
-    color: #2563eb;
+    color: var(--primary-color);
     padding: 12px 30px;
     border-radius: 30px;
     font-weight: 600;
@@ -134,14 +159,22 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.btn-primary:hover {
-    background-color: #f1f5f9;
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-/* Section Title */
+.hero-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* --- Product Grid Section (Tối thiểu 6 mục) --- */
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .section-title h2 {
@@ -153,12 +186,10 @@ body {
     color: var(--text-muted);
 }
 
-/* Product Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 80px;
+    gap: 25px;
 }
 
 .product-card {
@@ -169,7 +200,7 @@ body {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
@@ -179,12 +210,8 @@ body {
 .product-img {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 200px;
     background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .product-img img {
@@ -221,7 +248,7 @@ body {
     margin-bottom: 8px;
 }
 
-.desc {
+.config {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 15px;
@@ -235,37 +262,206 @@ body {
 }
 
 .price {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--accent-color);
 }
 
-.add-to-cart {
+.btn-cart {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
-.add-to-cart:hover {
+.btn-cart:hover {
     background-color: var(--primary-hover);
 }
 
-/* Footer */
+/* --- Form Đặt Hàng Section --- */
+.form-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-submit, .btn-reset {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-reset {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+/* --- Footer --- */
 .footer {
     background-color: var(--card-bg);
     border-top: 1px solid var(--border-color);
-    padding: 25px 0;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    margin-top: 60px;
+    padding-top: 40px;
 }
 
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- 6. Media Query Responsive (Tối thiểu 3 mốc: Mobile, Tablet, Laptop) --- */
+
+/* Mốc 1: Laptop nhỏ / Tablet ngang (dưới 1024px) */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mốc 2: Tablet dọc / iPad (dưới 768px) */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Ẩn menu chính trên mobile/tablet nhỏ */
+    }
+    .order-form {
+        grid-template-columns: 1fr;
+    }
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+    .form-section {
+        padding: 20px;
+    }
+}
+
+/* Mốc 3: Mobile nhỏ (dưới 480px / 375px chống cuộn ngang tuyệt đối) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    .container {
+        padding: 0 12px;
     }
 }
