@@ -3,356 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PandaStore - Trang bán hàng thiết bị công nghệ, laptop, bàn phím cơ, chuột chính hãng giá tốt nhất.">
-    <title>PandaStore - Trang Bán Thiết Bị Công Nghệ Chính Hãng</title>
+    <meta name="description" content="Panda Store - Trang bán hàng thiết bị công nghệ, laptop, bàn phím cơ, chuột chính hãng giá tốt nhất.">
+    <title>Panda Store - Trang Bán Thiết Bị Công Nghệ Chính Hãng</title>
     
-    <!-- Nhúng thư viện Animate.css qua CDN (Yêu cầu điểm 0.5) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-    <style>
-        /* --- 5. CSS Design System & Variables (:root) --- */
-        :root {
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
-            --header-bg: #ffffff;
-            --card-bg: #ffffff;
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
-            --border-color: #cbd5e1;
-            --footer-bg: #0f172a;
-            --footer-text: #f8fafc;
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --header-bg: #1e293b;
-            --card-bg: #1e293b;
-            --primary-color: #3b82f6;
-            --primary-hover: #60a5fa;
-            --border-color: #334155;
-            --footer-bg: #020617;
-            --footer-text: #f8fafc;
-        }
-
-        /* --- Global Reset & Box Model --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* --- 2. Dùng Grid dựng bố cục tổng thể trang web --- */
-        .page-grid {
-            display: grid;
-            grid-template-rows: auto auto 1fr auto;
-            min-height: 100vh;
-        }
-
-        /* --- 1. Header + Menu (Semantic: header, nav) --- */
-        header {
-            background-color: var(--header-bg);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        /* --- 3. Dùng Flexbox cho thanh menu --- */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--primary-color);
-        }
-
-        /* --- Banner / Hình ảnh (Semantic: section) --- */
-        .banner {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            color: #ffffff;
-            text-align: center;
-            padding: 5rem 2rem;
-        }
-
-        .banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .banner p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* --- Main Container (Semantic: main) --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            width: 100%;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        /* --- Danh sách nội dung: Dạng lưới tối thiểu 6 mục (Semantic: section, article) --- */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-price {
-            color: #e11d48;
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-specs {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        [data-theme="dark"] .product-specs {
-            color: #94a3b8;
-        }
-
-        /* --- Form Đặt Hàng (Yêu cầu đầy đủ 6 loại thẻ và căn chỉnh chuẩn) --- */
-        .order-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-
-        label {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="date"],
-        select,
-        textarea {
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            border-radius: 4px;
-            font-size: 1rem;
-            width: 100%;
-        }
-
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
-
-        .radio-group, .checkbox-group {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 0.25rem;
-            flex-wrap: wrap;
-        }
-
-        .radio-item, .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: normal;
-            cursor: pointer;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .btn-secondary {
-            background-color: #64748b;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            background-color: #475569;
-        }
-
-        /* --- Footer (Semantic: footer) --- */
-        footer {
-            background-color: var(--footer-bg);
-            color: var(--footer-text);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* --- 6. Media Query Responsive (Hỗ trợ tối thiểu 3 mốc: Mobile <= 480px, Tablet <= 768px, Laptop) --- */
-        @media (max-width: 768px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group.full-width {
-                grid-column: span 1;
-            }
-            .nav-links {
-                display: none; /* Ẩn menu phụ trên mobile nhỏ, có thể bật toggle nếu muốn */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1rem;
-            }
-            .banner h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
     <div class="page-grid">
         
-        <!-- 1. HEADER + MENU (Semantic tag: header, nav) -->
         <header>
             <nav class="nav-container">
-                <div class="logo">TechStore</div>
+                <div class="logo">Panda Store</div>
                 <ul class="nav-links">
                     <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#products">Laptop & Phụ kiện</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
                     <li><a href="#sale">Khuyến mãi</a></li>
                     <li><a href="#contact">Liên hệ</a></li>
                 </ul>
@@ -360,24 +26,41 @@
             </nav>
         </header>
 
-        <!-- 2. BANNER / HÌNH ẢNH (Semantic tag: section) -->
         <section id="home" class="banner animate__animated animate__fadeIn">
-            <h1>TechStore - Thế Giới Công Nghệ Đỉnh Cao</h1>
+            <h1>Panda Store - Thế Giới Công Nghệ Đỉnh Cao</h1>
             <p>Chương trình khuyến mãi chào thu - Giảm giá đến 35% toàn bộ sản phẩm chính hãng!</p>
             <a href="#products" class="btn-primary">Mua ngay</a>
         </section>
 
-        <!-- MAIN CONTENT (Semantic tag: main) -->
         <main class="container">
             
-            <!-- 3. DANH SÁCH NỘI DUNG (Tối thiểu 6 sản phẩm, dạng lưới Grid/Flex) -->
+            <section id="sale" class="sale-section">
+                <h2 class="section-title">Chương Trình Khuyến Mãi Hot</h2>
+                <div class="sale-grid">
+                    <div class="sale-card">
+                        <h3>Giảm Sập Sàn Laptop Gaming</h3>
+                        <p>Giảm ngay 2.000.000đ khi mua các dòng Acer Nitro & Asus Zenbook kèm balo chính hãng.</p>
+                        <span class="badge">Mã: PANDA2M</span>
+                    </div>
+                    <div class="sale-card">
+                        <h3>Combo Phụ Kiện Giá Hời</h3>
+                        <p>Mua kèm Bàn phím cơ và Chuột không dây giảm ngay 15% tổng hóa đơn phụ kiện.</p>
+                        <span class="badge">Mã: COMBO15</span>
+                    </div>
+                    <div class="sale-card">
+                        <h3>Miễn Phí Vận Chuyển Toàn Quốc</h3>
+                        <p>Áp dụng cho mọi đơn hàng thiết bị công nghệ từ 1.000.000đ trở lên trong hôm nay.</p>
+                        <span class="badge">Freeship</span>
+                    </div>
+                </div>
+            </section>
+
             <section id="products">
-                <h2 class="section-title animate__animated animate__bounceIn">Danh Sách Sản Phẩm Nổi Bật</h2>
+                <h2 class="section-title">Danh Sách Sản Phẩm Nổi Bật</h2>
                 <div class="products-grid">
                     
-                    <!-- Sản phẩm 1 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="Laptop Gaming Acer Nitro 5 hiệu năng cao">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="Laptop Gaming Acer Nitro 5">
                         <div class="product-info">
                             <h3 class="product-title">Laptop Gaming Acer Nitro 5</h3>
                             <div class="product-price">21.990.000 đ</div>
@@ -386,9 +69,8 @@
                         </div>
                     </article>
 
-                    <!-- Sản phẩm 2 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=500&q=80" alt="MacBook Air M2 2022 mỏng nhẹ sang trọng">
+                        <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=500&q=80" alt="MacBook Air M2 2022">
                         <div class="product-info">
                             <h3 class="product-title">MacBook Air M2 2022</h3>
                             <div class="product-price">24.500.000 đ</div>
@@ -397,9 +79,8 @@
                         </div>
                     </article>
 
-                    <!-- Sản phẩm 3 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80" alt="Bàn phím cơ Keychron K2 không dây">
+                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80" alt="Bàn phím cơ Keychron K2">
                         <div class="product-info">
                             <h3 class="product-title">Bàn phím cơ Keychron K2</h3>
                             <div class="product-price">1.850.000 đ</div>
@@ -408,9 +89,8 @@
                         </div>
                     </article>
 
-                    <!-- Sản phẩm 4 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=500&q=80" alt="Chuột gaming Logitech G Pro X siêu nhẹ">
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=500&q=80" alt="Chuột Logitech G Pro X">
                         <div class="product-info">
                             <h3 class="product-title">Chuột Logitech G Pro X</h3>
                             <div class="product-price">2.990.000 đ</div>
@@ -419,9 +99,8 @@
                         </div>
                     </article>
 
-                    <!-- Sản phẩm 5 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=500&q=80" alt="Laptop ASUS Zenbook 14 màn hình OLED">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=500&q=80" alt="Laptop ASUS Zenbook 14">
                         <div class="product-info">
                             <h3 class="product-title">Laptop ASUS Zenbook 14</h3>
                             <div class="product-price">19.990.000 đ</div>
@@ -430,9 +109,8 @@
                         </div>
                     </article>
 
-                    <!-- Sản phẩm 6 -->
                     <article class="product-card animate__animated animate__zoomIn">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80" alt="Apple Watch SE 2023 GPS thông minh">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80" alt="Apple Watch SE 2023">
                         <div class="product-info">
                             <h3 class="product-title">Apple Watch SE 2023</h3>
                             <div class="product-price">6.490.000 đ</div>
@@ -444,43 +122,36 @@
                 </div>
             </section>
 
-            <!-- 4. FORM ĐẶT HÀNG (Yêu cầu đề số 5: đủ các trường bắt buộc và đủ loại thẻ form) -->
             <section class="order-section animate__animated animate__fadeInUp" id="contact">
                 <h2 class="section-title">Form Đặt Hàng Sản Phẩm</h2>
                 <form action="#" method="POST">
                     <div class="form-grid">
                         
-                        <!-- Họ và tên (input type="text") -->
                         <div class="form-group">
                             <label for="fullname">Họ và tên:</label>
                             <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên của bạn" required>
                         </div>
 
-                        <!-- Email (input type="email") -->
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                         </div>
 
-                        <!-- Điện thoại (input type="tel") -->
                         <div class="form-group">
                             <label for="phone">Điện thoại:</label>
                             <input type="tel" id="phone" name="phone" placeholder="0901234567" required>
                         </div>
 
-                        <!-- Địa chỉ giao hàng (input type="text") -->
                         <div class="form-group">
                             <label for="address">Địa chỉ giao hàng:</label>
                             <input type="text" id="address" name="address" placeholder="Số nhà, đường, phường/xã, quận/huyện..." required>
                         </div>
 
-                        <!-- Ngày muốn nhận (input type="date") -->
                         <div class="form-group">
                             <label for="delivery-date">Ngày muốn nhận:</label>
                             <input type="date" id="delivery-date" name="delivery_date" required>
                         </div>
 
-                        <!-- Hình thức thanh toán (radio - Tiền mặt / Chuyển khoản / Trả góp) -->
                         <div class="form-group">
                             <label>Hình thức thanh toán:</label>
                             <div class="radio-group">
@@ -490,7 +161,6 @@
                             </div>
                         </div>
 
-                        <!-- Sản phẩm đặt mua (select - tối thiểu 4 lựa chọn) -->
                         <div class="form-group">
                             <label for="product-select">Sản phẩm đặt mua:</label>
                             <select id="product-select" name="product">
@@ -502,7 +172,6 @@
                             </select>
                         </div>
 
-                        <!-- Dịch vụ kèm theo (checkbox - tối thiểu 3 lựa chọn) -->
                         <div class="form-group">
                             <label>Dịch vụ kèm theo:</label>
                             <div class="checkbox-group">
@@ -512,13 +181,11 @@
                             </div>
                         </div>
 
-                        <!-- Ghi chú giao hàng (textarea) -->
                         <div class="form-group full-width">
                             <label for="notes">Ghi chú giao hàng:</label>
                             <textarea id="notes" name="notes" placeholder="Lưu ý về thời gian hoặc địa điểm giao hàng..."></textarea>
                         </div>
 
-                        <!-- Nút bấm (button - Đặt hàng và Nhập lại) -->
                         <div class="form-actions full-width">
                             <button type="submit" class="btn-primary">Đặt hàng</button>
                             <button type="reset" class="btn-secondary">Nhập lại</button>
@@ -530,17 +197,15 @@
 
         </main>
 
-        <!-- 5. FOOTER (Semantic tag: footer) -->
         <footer>
             <p><strong>Địa chỉ cửa hàng:</strong> 123 Đường Công Nghệ, Phường Linh Trung, TP. Thủ Đức, TP.HCM</p>
             <p><strong>Chính sách bảo hành:</strong> Bảo hành chính hãng 12-24 tháng, 1 đổi 1 trong 30 ngày đầu nếu lỗi phần cứng.</p>
-            <p><strong>Hotline:</strong> 1900 1234 — <strong>Email:</strong> support@techstore.vn</p>
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8;">&copy; 2026 TechStore. All rights reserved.</p>
+            <p><strong>Hotline:</strong> 1900 1234 — <strong>Email:</strong> support@pandastore.vn</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #94a3b8;">&copy; 2026 Panda Store. All rights reserved.</p>
         </footer>
 
     </div>
 
-    <!-- Script JavaScript chuyển đổi Dark Mode và chọn nhanh sản phẩm -->
     <script>
         function toggleTheme() {
             const html = document.documentElement;
