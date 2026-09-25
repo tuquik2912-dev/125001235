@@ -17,7 +17,7 @@
             <nav class="nav-links">
                 <a href="#" class="active">Trang Chủ</a>
                 <a href="#products">Sản Phẩm</a>
-                <a href="#sale">Khuyến Mãi</a>
+                <a href="#about">Giới Thiệu</a>
                 <a href="#contact">Liên Hệ</a>
             </nav>
             <div class="nav-actions">
@@ -137,6 +137,56 @@
             </div>
         </div>
     </main>
+
+    <!-- Phần Liên Hệ (Contact Section) -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <p>Bạn cần tư vấn sản phẩm hoặc hỗ trợ kỹ thuật? Hãy gửi tin nhắn cho chúng tôi!</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Thông tin liên hệ -->
+                <div class="contact-info">
+                    <h3>Thông Tin Cửa Hàng</h3>
+                    <p class="desc">Chúng tôi luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn từ 8:00 - 21:00 hàng ngày.</p>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Số 123, Đường Công Nghệ, Quận 1, TP. Hồ Chí Minh</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Hotline: 0123 456 789</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email: support@pandastore.vn</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form gửi tin nhắn -->
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');">
+                    <div class="form-group">
+                        <label for="name">Họ và tên</label>
+                        <input type="text" id="name" placeholder="Nhập họ tên của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nội dung tin nhắn</label>
+                        <textarea id="message" rows="4" placeholder="Nhập nội dung cần hỗ trợ..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Gửi Tin Nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
