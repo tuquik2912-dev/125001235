@@ -41,7 +41,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Tránh cuộn ngang */
+    overflow-x: hidden;
 }
 
 .container {
@@ -50,14 +50,14 @@ body {
     padding: 0 20px;
 }
 
-/* --- 2. CSS Grid tổng thể (Bố cục các vùng lớn) --- */
+/* --- 2. CSS Grid tổng thể --- */
 .main-layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
 }
 
-/* --- 3. Flexbox trình bày nội dung bên trong các khối --- */
+/* --- 3. Flexbox trình bày Header --- */
 .header {
     position: sticky;
     top: 0;
@@ -117,7 +117,7 @@ body {
     color: var(--primary-color);
 }
 
-/* --- Banner Section (Flexbox) --- */
+/* --- Banner Section --- */
 .hero {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     color: white;
@@ -171,7 +171,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* --- Product Grid Section (Tối thiểu 6 mục) --- */
+/* --- Product Grid Section --- */
 .section-title {
     text-align: center;
     margin-bottom: 35px;
@@ -280,6 +280,44 @@ body {
 
 .btn-cart:hover {
     background-color: var(--primary-hover);
+}
+
+/* --- Promo Section --- */
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.promo-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.promo-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.promo-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.promo-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 /* --- Form Đặt Hàng Section --- */
@@ -426,7 +464,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* --- 6. Media Query Responsive (Tối thiểu 3 mốc: Mobile, Tablet, Laptop) --- */
+/* --- 6. Media Query Responsive (Đủ 3 mốc màn hình) --- */
 
 /* Mốc 1: Laptop nhỏ / Tablet ngang (dưới 1024px) */
 @media (max-width: 1024px) {
@@ -443,7 +481,7 @@ body {
 /* Mốc 2: Tablet dọc / iPad (dưới 768px) */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Ẩn menu chính trên mobile/tablet nhỏ */
+        display: none;
     }
     .order-form {
         grid-template-columns: 1fr;
@@ -456,7 +494,7 @@ body {
     }
 }
 
-/* Mốc 3: Mobile nhỏ (dưới 480px / 375px chống cuộn ngang tuyệt đối) */
+/* Mốc 3: Mobile nhỏ (dưới 480px) */
 @media (max-width: 480px) {
     .hero-text h1 {
         font-size: 1.8rem;
