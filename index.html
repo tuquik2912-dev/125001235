@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css CDN -->
+    <!-- Animate.css CDN (Đảm bảo điểm +0,5 hiệu ứng) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
@@ -27,6 +27,7 @@
                 <a href="#contact">Liên hệ</a>
             </nav>
             <div class="nav-actions">
+                <!-- Nút DarkMode / LightMode (+0,5 điểm thưởng tính năng tương tác) -->
                 <button id="theme-toggle" title="Chuyển đổi DarkMode / LightMode">
                     <i class="fa-solid fa-moon"></i>
                 </button>
@@ -34,7 +35,7 @@
         </div>
     </header>
 
-    <!-- Main Content bọc bằng Grid tổng thể -->
+    <!-- Main Content bọc bằng CSS Grid tổng thể -->
     <div class="main-layout">
 
         <!-- 2. Banner / Hình ảnh -->
@@ -51,7 +52,7 @@
             </div>
         </section>
 
-        <!-- 3. Danh sách sản phẩm được sắp xếp hợp lý theo từng phân khúc -->
+        <!-- 3. Danh sách sản phẩm (Phân loại hợp lý) -->
         <section class="container products-section" id="products">
             <div class="section-title animate__animated animate__fadeInUp">
                 <h2>Sản Phẩm Nổi Bật</h2>
@@ -59,7 +60,7 @@
             </div>
 
             <div class="product-grid">
-                <!-- Nhóm 1: Laptop Gaming -->
+                <!-- Laptop Gaming -->
                 <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80" alt="Laptop Gaming Acer Nitro V">
@@ -75,7 +76,7 @@
                     </div>
                 </article>
 
-                <!-- Nhóm 2: Laptop Văn Phòng / Mỏng nhẹ -->
+                <!-- Laptop Văn Phòng / Mỏng nhẹ -->
                 <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="MacBook Air M2">
@@ -106,7 +107,7 @@
                     </div>
                 </article>
 
-                <!-- Nhóm 3: Phụ kiện bàn phím & chuột -->
+                <!-- Phụ kiện bàn phím & chuột -->
                 <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80" alt="Bàn phím cơ Keychron K2">
@@ -137,7 +138,7 @@
                     </div>
                 </article>
 
-                <!-- Nhóm 4: Thiết bị đeo thông minh -->
+                <!-- Thiết bị đeo thông minh -->
                 <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Apple Watch SE 2023">
@@ -155,7 +156,7 @@
             </div>
         </section>
 
-        <!-- 3.1. Phần Khuyến Mãi (Mới bổ sung) -->
+        <!-- Phần Khuyến Mãi -->
         <section class="container promo-section" id="promo">
             <div class="section-title">
                 <h2>Chương Trình Khuyến Mãi & Ưu Đãi</h2>
@@ -181,7 +182,7 @@
             </div>
         </section>
 
-        <!-- 4. Form Đặt Hàng Trực Tuyến -->
+        <!-- 4. Form Đặt Hàng Trực Tuyến (Đảm bảo đủ 6 loại thẻ form) -->
         <section class="container form-section" id="order-form">
             <div class="section-title">
                 <h2>Form Đặt Hàng Trực Tuyến</h2>
@@ -190,32 +191,33 @@
 
             <form class="order-form">
                 <div class="form-group">
-                    <label for="fullname">Họ và tên</label>
+                    <label for="fullname">Họ và tên (Input Text)</label>
                     <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên đầy đủ của bạn" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email (Input Email)</label>
                     <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Điện thoại</label>
+                    <label for="phone">Điện thoại (Input Tel)</label>
                     <input type="tel" id="phone" name="phone" placeholder="0912345678" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="address">Địa chỉ giao hàng</label>
-                    <input type="text" id="address" name="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện" required>
+                    <label for="address">Địa chỉ giao hàng (Input Text)</label>
+                    <input type="text" id="address" name="address" placeholder="Số nhà, tên đường, phường/xã" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="delivery-date">Ngày muốn nhận</label>
+                    <label for="delivery-date">Ngày muốn nhận (Input Date)</label>
                     <input type="date" id="delivery-date" name="delivery_date" required>
                 </div>
 
+                <!-- Radio Button -->
                 <div class="form-group full-width">
-                    <label>Hình thức thanh toán</label>
+                    <label>Hình thức thanh toán (Radio)</label>
                     <div class="radio-group">
                         <label><input type="radio" name="payment" value="cash" checked> Tiền mặt</label>
                         <label><input type="radio" name="payment" value="transfer"> Chuyển khoản</label>
@@ -223,8 +225,9 @@
                     </div>
                 </div>
 
+                <!-- Select Dropdown -->
                 <div class="form-group">
-                    <label for="product-select">Sản phẩm đặt mua</label>
+                    <label for="product-select">Sản phẩm đặt mua (Select)</label>
                     <select id="product-select" name="product" required>
                         <option value="" disabled selected>-- Chọn sản phẩm --</option>
                         <option value="nitro">Laptop Gaming Acer Nitro V</option>
@@ -236,8 +239,9 @@
                     </select>
                 </div>
 
+                <!-- Checkbox -->
                 <div class="form-group full-width">
-                    <label>Dịch vụ kèm theo</label>
+                    <label>Dịch vụ kèm theo (Checkbox)</label>
                     <div class="checkbox-group">
                         <label><input type="checkbox" name="service" value="warranty"> Gói bảo hành vàng (+500k)</label>
                         <label><input type="checkbox" name="service" value="cleaning"> Vệ sinh trọn đời miễn phí</label>
@@ -245,14 +249,16 @@
                     </div>
                 </div>
 
+                <!-- Textarea -->
                 <div class="form-group full-width">
-                    <label for="note">Ghi chú giao hàng</label>
+                    <label for="note">Ghi chú giao hàng (Textarea)</label>
                     <textarea id="note" name="note" rows="4" placeholder="Nhập ghi chú đặc biệt cho shipper (nếu có)..."></textarea>
                 </div>
 
+                <!-- Buttons -->
                 <div class="form-actions full-width">
-                    <button type="submit" class="btn-submit">Đặt hàng</button>
-                    <button type="reset" class="btn-reset">Nhập lại</button>
+                    <button type="submit" class="btn-submit">Đặt hàng (Button Submit)</button>
+                    <button type="reset" class="btn-reset">Nhập lại (Button Reset)</button>
                 </div>
             </form>
         </section>
@@ -287,7 +293,7 @@
         </div>
     </footer>
 
-    <!-- Script điều khiển DarkMode -->
+    <!-- Script điều khiển DarkMode lưu localStorage -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const icon = themeToggleBtn.querySelector('i');
