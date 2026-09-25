@@ -3,199 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panda Store - Thiết Bị Công Nghệ Chính Hãng</title>
+    <meta name="description" content="Trang web chính thức của TechStore - Chuyên cung cấp laptop, linh kiện và phụ kiện công nghệ chính hãng hàng đầu.">
+    <title>TechStore - Thiết Bị Công Nghệ Chính Hãng</title>
     <link rel="stylesheet" href="index.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- 1. Header + Menu -->
     <header class="header">
         <div class="container nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-store"></i> Panda Store</a>
+            <a href="#" class="logo animate__animated animate__fadeInLeft"><i class="fa-solid fa-bolt"></i> TechStore</a>
             <nav class="nav-links">
-                <a href="#" class="active">Trang Chủ</a>
-                <a href="#products">Sản Phẩm</a>
-                <a href="#about">Giới Thiệu</a>
-                <a href="#contact">Liên Hệ</a>
+                <a href="#" class="active">Trang chủ</a>
+                <a href="#products">Laptop</a>
+                <a href="#accessories">Phụ kiện</a>
+                <a href="#promo">Khuyến mãi</a>
+                <a href="#contact">Liên hệ</a>
             </nav>
             <div class="nav-actions">
-                <button id="theme-toggle" title="Chuyển đổi giao diện"><i class="fa-solid fa-moon"></i></button>
+                <button id="theme-toggle" title="Chuyển đổi DarkMode / LightMode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Banner -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Thế Giới Công Nghệ Đỉnh Cao</h1>
-            <p>Chuyên cung cấp Laptop, Bàn phím cơ, Chuột và phụ kiện chính hãng hàng đầu.</p>
-            <a href="#products" class="btn-primary">Khám Phá Ngay</a>
-        </div>
-    </section>
+    <!-- Main Content bọc bằng Grid tổng thể -->
+    <div class="main-layout">
 
-    <!-- Main Products -->
-    <main class="container" id="products">
-        <div class="section-title">
-            <h2>Sản Phẩm Nổi Bật</h2>
-            <p>Thiết bị công nghệ chất lượng cao, giá tốt nhất dành cho bạn</p>
-        </div>
-
-        <div class="product-grid">
-            <!-- Sản phẩm 1 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80" alt="Laptop Gaming Acer Nitro">
-                    <span class="tag">Gaming</span>
+        <!-- 2. Banner / Hình ảnh -->
+        <section class="hero animate__animated animate__fadeIn">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Siêu Phẩm Công Nghệ Đỉnh Cao 2026</h1>
+                    <p>Sở hữu ngay các dòng Laptop gaming cấu hình khủng và phụ kiện chính hãng với chương trình giảm giá lên đến 30%!</p>
+                    <a href="#order-form" class="btn-primary">Mua ngay</a>
                 </div>
-                <div class="product-info">
-                    <h3>Laptop Gaming Acer Nitro</h3>
-                    <p class="desc">Cấu hình mạnh mẽ, tản nhiệt tối ưu chiến mọi tựa game.</p>
-                    <div class="price-box">
-                        <span class="price">21.990.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
-                    </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=600&q=80" alt="Laptop gaming nổi bật">
                 </div>
             </div>
+        </section>
 
-            <!-- Sản phẩm 2 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80" alt="MacBook Air M2">
-                    <span class="tag hot">Hot</span>
-                </div>
-                <div class="product-info">
-                    <h3>MacBook Air M2 2022</h3>
-                    <p class="desc">Thiết kế mỏng nhẹ sang trọng, chip M2 hiệu năng vượt trội.</p>
-                    <div class="price-box">
-                        <span class="price">24.500.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
-                    </div>
-                </div>
+        <!-- 3. Danh sách nội dung (Tối thiểu 6 mục, dạng lưới) -->
+        <section class="container products-section" id="products">
+            <div class="section-title animate__animated animate__fadeInUp">
+                <h2>Sản Phẩm Nổi Bật</h2>
+                <p>Khám phá các thiết bị công nghệ mới nhất dành riêng cho bạn</p>
             </div>
 
-            <!-- Sản phẩm 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80" alt="Bàn phím cơ Keychron">
-                </div>
-                <div class="product-info">
-                    <h3>Bàn phím cơ Keychron K2</h3>
-                    <p class="desc">Hot-swappable, kết nối không dây Bluetooth tiện lợi.</p>
-                    <div class="price-box">
-                        <span class="price">1.850.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
+            <div class="product-grid">
+                <!-- Mục 1 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80" alt="Laptop Gaming Acer Nitro V">
+                        <span class="tag">Gaming</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Sản phẩm 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80" alt="Chuột Logitech G Pro X">
-                    <span class="tag">Esports</span>
-                </div>
-                <div class="product-info">
-                    <h3>Chuột Logitech G Pro X</h3>
-                    <p class="desc">Thiết kế siêu nhẹ, cảm biến HERO chính xác tuyệt đối.</p>
-                    <div class="price-box">
-                        <span class="price">2.990.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
+                    <div class="product-info">
+                        <h3>Laptop Gaming Acer Nitro V</h3>
+                        <p class="config">CPU i5-13420H · RAM 16GB · SSD 512GB · RTX 4050</p>
+                        <div class="price-box">
+                            <span class="price">21.990.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Sản phẩm 5 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80" alt="Laptop ASUS Zenbook">
-                </div>
-                <div class="product-info">
-                    <h3>Laptop ASUS Zenbook 14</h3>
-                    <p class="desc">Màn hình OLED sắc nét, mỏng nhẹ hoàn hảo cho dân văn phòng.</p>
-                    <div class="price-box">
-                        <span class="price">19.990.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
+                <!-- Mục 2 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="MacBook Air M2">
+                        <span class="tag hot">Hot</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Sản phẩm 6 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Apple Watch SE">
-                </div>
-                <div class="product-info">
-                    <h3>Apple Watch SE 2023</h3>
-                    <p class="desc">Đồng hồ thông minh hỗ trợ theo dõi sức khỏe và thể thao.</p>
-                    <div class="price-box">
-                        <span class="price">6.490.000₫</span>
-                        <button class="add-to-cart">Chọn mua</button>
+                    <div class="product-info">
+                        <h3>MacBook Air M2 Silver</h3>
+                        <p class="config">Apple M2 chip · RAM 8GB · SSD 256GB · 13.6" Retina</p>
+                        <div class="price-box">
+                            <span class="price">24.500.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
+                </article>
 
-    <!-- Phần Liên Hệ (Contact Section) -->
-    <section class="contact-section" id="contact">
-        <div class="container">
+                <!-- Mục 3 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=500&q=80" alt="Bàn phím cơ Keychron K2">
+                    </div>
+                    <div class="product-info">
+                        <h3>Bàn phím cơ Keychron K2</h3>
+                        <p class="config">Bluetooth 5.1 · Hot-swappable · RGB LED · Gateron Switch</p>
+                        <div class="price-box">
+                            <span class="price">1.850.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mục 4 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=500&q=80" alt="Chuột Logitech G Pro X">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chuột Logitech G Pro X</h3>
+                        <p class="config">LIGHTSPEED Wireless · Cảm biến HERO 25K · 63g</p>
+                        <div class="price-box">
+                            <span class="price">2.990.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mục 5 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=500&q=80" alt="Laptop ASUS Zenbook 14">
+                    </div>
+                    <div class="product-info">
+                        <h3>Laptop ASUS Zenbook 14</h3>
+                        <p class="config">Intel Core Ultra 5 · RAM 16GB · SSD 512GB · OLED 2.8K</p>
+                        <div class="price-box">
+                            <span class="price">19.990.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Mục 6 -->
+                <article class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Apple Watch SE 2023">
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple Watch SE 2023</h3>
+                        <p class="config">Size 44mm · Nhôm viền bạc · Dây thể thao · GPS</p>
+                        <div class="price-box">
+                            <span class="price">6.490.000₫</span>
+                            <button class="btn-cart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Form Đặt hàng (Đảm bảo đủ 6 loại thẻ: input(3 type), checkbox, radio, select, textarea, button) -->
+        <section class="container form-section" id="order-form">
             <div class="section-title">
-                <h2>Liên Hệ Với Chúng Tôi</h2>
-                <p>Bạn cần tư vấn sản phẩm hoặc hỗ trợ kỹ thuật? Hãy gửi tin nhắn cho chúng tôi!</p>
+                <h2>Form Đặt Hàng Trực Tuyến</h2>
+                <p>Điền thông tin chi tiết để chúng tôi xác nhận và giao hàng nhanh chóng</p>
             </div>
-            
-            <div class="contact-grid">
-                <!-- Thông tin liên hệ -->
-                <div class="contact-info">
-                    <h3>Thông Tin Cửa Hàng</h3>
-                    <p class="desc">Chúng tôi luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn từ 8:00 - 21:00 hàng ngày.</p>
-                    
-                    <ul class="contact-list">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Số 123, Đường Công Nghệ, Quận 1, TP. Hồ Chí Minh</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Hotline: 0123 456 789</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Email: support@pandastore.vn</span>
-                        </li>
-                    </ul>
+
+            <form class="order-form">
+                <!-- 1. Input type="text" -->
+                <div class="form-group">
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên đầy đủ của bạn" required>
                 </div>
 
-                <!-- Form gửi tin nhắn -->
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');">
-                    <div class="form-group">
-                        <label for="name">Họ và tên</label>
-                        <input type="text" id="name" placeholder="Nhập họ tên của bạn" required>
+                <!-- 2. Input type="email" -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <!-- 3. Input type="tel" -->
+                <div class="form-group">
+                    <label for="phone">Điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="0912345678" required>
+                </div>
+
+                <!-- Input phụ (đảm bảo đủ 3 loại input khác nhau: text, email, tel, date) -->
+                <div class="form-group">
+                    <label for="address">Địa chỉ giao hàng</label>
+                    <input type="text" id="address" name="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-date">Ngày muốn nhận</label>
+                    <input type="date" id="delivery-date" name="delivery_date" required>
+                </div>
+
+                <!-- Radio (Hình thức thanh toán) -->
+                <div class="form-group full-width">
+                    <label>Hình thức thanh toán</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="payment" value="cash" checked> Tiền mặt</label>
+                        <label><input type="radio" name="payment" value="transfer"> Chuyển khoản</label>
+                        <label><input type="radio" name="payment" value="installment"> Trả góp</label>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Nhập email của bạn" required>
+                </div>
+
+                <!-- Select (Sản phẩm đặt mua - Tối thiểu 4 lựa chọn) -->
+                <div class="form-group">
+                    <label for="product-select">Sản phẩm đặt mua</label>
+                    <select id="product-select" name="product" required>
+                        <option value="" disabled selected>-- Chọn sản phẩm --</option>
+                        <option value="nitro">Laptop Gaming Acer Nitro V</option>
+                        <option value="macbook">MacBook Air M2 Silver</option>
+                        <option value="keychron">Bàn phím cơ Keychron K2</option>
+                        <option value="logitech">Chuột Logitech G Pro X</option>
+                    </select>
+                </div>
+
+                <!-- Checkbox (Dịch vụ kèm theo - Tối thiểu 3 lựa chọn) -->
+                <div class="form-group full-width">
+                    <label>Dịch vụ kèm theo</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="service" value="warranty"> Gói bảo hành vàng (+500k)</label>
+                        <label><input type="checkbox" name="service" value="cleaning"> Vệ sinh trọn đời miễn phí</label>
+                        <label><input type="checkbox" name="service" value="install"> Cài đặt phần mềm bản quyền</label>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Nội dung tin nhắn</label>
-                        <textarea id="message" rows="4" placeholder="Nhập nội dung cần hỗ trợ..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Gửi Tin Nhắn</button>
-                </form>
+                </div>
+
+                <!-- Textarea (Ghi chú giao hàng) -->
+                <div class="form-group full-width">
+                    <label for="note">Ghi chú giao hàng</label>
+                    <textarea id="note" name="note" rows="4" placeholder="Nhập ghi chú đặc biệt cho shipper (nếu có)..."></textarea>
+                </div>
+
+                <!-- Buttons (Đặt hàng và Nhập lại) -->
+                <div class="form-actions full-width">
+                    <button type="submit" class="btn-submit">Đặt hàng</button>
+                    <button type="reset" class="btn-reset">Nhập lại</button>
+                </div>
+            </form>
+        </section>
+
+    </div> <!-- Kết thúc main-layout -->
+
+    <!-- 5. Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>TechStore - Hệ Thống Thiết Bị Công Nghệ</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Địa chỉ: Số 123 Đường Công Nghệ, TP. Biên Hòa, Đồng Nai</p>
+                <p><i class="fa-solid fa-phone"></i> Hotline: 0123 456 789</p>
+            </div>
+            <div class="footer-col">
+                <h3>Chính sách & Hỗ trợ</h3>
+                <p>Chính sách bảo hành 1 đổi 1</p>
+                <p>Chính sách đổi trả trong 30 ngày</p>
+                <p>Hỗ trợ trả góp 0% lãi suất</p>
+            </div>
+            <div class="footer-col">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Panda Store. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechStore. All rights reserved. Thiết kế bởi Sinh viên LHU.</p>
         </div>
     </footer>
 
-    <!-- Script Dark Mode -->
+    <!-- Script điều khiển DarkMode -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         const icon = themeToggleBtn.querySelector('i');
